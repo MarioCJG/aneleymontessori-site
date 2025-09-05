@@ -53,7 +53,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px
+    height: 80px
 }
 
 .brand {
@@ -66,8 +66,8 @@ body {
 }
 
 .brand img {
-    width: 200px;
-    height: 80px
+    width: auto;
+    height: 64px
 }
 
 .nav-links {
@@ -82,24 +82,97 @@ body {
     color: #2a2f31;
     text-decoration: none;
     padding: 8px 10px;
-    border-radius: 10px
+    border-radius: 10px;
+    font-weight: 800;
 }
 
 .nav-links a:hover {
     background: #f2f6f3
 }
 
-.nav-links .cta {
+/* --- Botón Instagram: tamaño + colores forzados --- */
+.nav-links .cta.ig {
+    /* botón más grande */
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     background: var(--green);
-    color: #fff
+    color: #fff;
+    /* controla el color del ícono (currentColor) */
+    border-radius: 12px;
 }
 
-.nav-toggle {
-    display: none;
-    background: transparent;
-    border: 0;
-    font-size: 22px
+.nav-links .cta.ig svg {
+    width: 40px;
+    /* sube o baja estos dos valores si quieres */
+    height: 40px;
 }
+
+/* si algún reset dejó el SVG “sin relleno”, esto lo corrige */
+.nav-links .cta.ig svg path,
+.nav-links .cta.ig svg * {
+    fill: currentColor !important;
+    stroke: none !important;
+}
+
+.nav-links .cta.ig:hover {
+    filter: brightness(1.05);
+}
+
+/* === Hamburger mejorado === */
+.nav-toggle {
+    width: 44px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid #dfe7e2;
+    border-radius: 8px;
+    background: #fff;
+    display: none;
+    /* se activa en mobile abajo */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-toggle .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #2a2f31;
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease, width .2s ease;
+}
+
+.nav-toggle .bar+.bar {
+    margin-top: 6px;
+}
+
+/* Animación a X cuando está abierto */
+.nav-toggle.is-open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.is-open .bar:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+.nav-toggle.is-open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* En móvil mostramos el botón y mantenemos tu dropdown */
+@media (max-width:860px) {
+    .nav-toggle {
+        display: flex;
+    }
+}
+
 
 
 /* Hero */
