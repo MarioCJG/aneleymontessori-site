@@ -1,0 +1,151 @@
+<%- include('partials/navbar') %>
+
+<section id="hero" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>Comunidad Aneley Montessori</h1>
+      <p class="lead">
+        Ambientes preparados, autonomía y respeto por los ritmos de la infancia.
+        Educación con propósito en vínculo con la naturaleza y la comunidad.
+      </p>
+      <div class="hero-cta">
+        <a href="#admision" class="btn btn--primary">Postula aquí</a>
+        <a
+          href="https://instagram.com/aneleymontessori"
+          target="_blank"
+          class="btn btn--ghost"
+          >Instagram</a
+        >
+      </div>
+    </div>
+    <figure class="hero-image">
+      <img src="/img/hero.jpg" alt="Aneley Montessori" />
+    </figure>
+  </div>
+</section>
+
+<section id="sello" class="section">
+  <div class="container">
+    <h2>Sello educativo</h2>
+    <p>
+      Inspirados en Montessori, promovemos la independencia, el trabajo libre y
+      la colaboración. Nuestro ambiente preparado ofrece materiales concretos y
+      experiencias con la naturaleza.
+    </p>
+  </div>
+</section>
+
+<section id="niveles" class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Niveles</h2>
+      <p class="muted">Etapas y rangos de edad.</p>
+    </div>
+
+    <div class="cards">
+      <% niveles.forEach(function(n){ %>
+      <article class="card">
+        <h3><%= n.nombre %></h3>
+        <ul class="meta">
+          <li><strong>Edades:</strong> <%= n.edades %></li>
+          <li><strong>Cupos:</strong> <%= n.cupos %></li>
+          <li><strong>Guías:</strong> <%= n.guias.join(', ') %></li>
+        </ul>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section id="admision" class="section section--accent">
+  <div class="container admision">
+    <div class="admision-copy">
+      <h2>Admisión 2025</h2>
+      <p>
+        Completa el formulario de postulación. Nos pondremos en contacto para
+        agendar una visita.
+      </p>
+      <a class="btn btn--primary" target="_blank" href="#">Abrir Formulario</a>
+    </div>
+    <div class="admision-badge">Nuevo Proceso</div>
+  </div>
+</section>
+
+<section id="noticias" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Noticias</h2>
+      <a class="link" href="#">Ver todas →</a>
+    </div>
+
+    <div class="news">
+      <% noticias.forEach(function(n){ %>
+      <article class="news-card">
+        <figure><img src="<%= n.img %>" alt="<%= n.titulo %>" /></figure>
+        <div class="news-body">
+          <span class="news-date"><%= n.fecha %></span>
+          <h3><%= n.titulo %></h3>
+          <p><%= n.resumen %></p>
+          <a href="<%= n.url %>" class="link">Leer más</a>
+        </div>
+      </article>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="section section--alt">
+  <div class="container">
+    <h2>Galería</h2>
+    <div class="mosaic">
+      <img src="/img/news-1.jpg" alt="Galería 1" />
+      <img src="/img/news-2.jpg" alt="Galería 2" />
+      <img src="/img/news-3.jpg" alt="Galería 3" />
+      <img src="/img/news-1.jpg" alt="Galería 4" />
+      <img src="/img/news-2.jpg" alt="Galería 5" />
+      <img src="/img/news-3.jpg" alt="Galería 6" />
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="container grid-2">
+    <div>
+      <h2>Contacto</h2>
+      <ul class="contact-list">
+        <li>Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a></li>
+        <li>
+          Correo:
+          <a href="mailto:contacto@jardinaneley.com"
+            >contacto@jardinaneley.com</a
+          >
+        </li>
+        <li>
+          Instagram:
+          <a target="_blank" href="https://instagram.com/aneleymontessori"
+            >@aneleymontessori</a
+          >
+        </li>
+      </ul>
+      <form
+        class="contact-form"
+        onsubmit="event.preventDefault(); alert('Gracias, pronto te contactaremos.');"
+      >
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Correo" required />
+        <textarea placeholder="Mensaje" rows="4" required></textarea>
+        <button class="btn btn--primary" type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13296.108!2d-70.6506!3d-33.4372"
+        width="100%"
+        height="320"
+        style="border: 0"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
