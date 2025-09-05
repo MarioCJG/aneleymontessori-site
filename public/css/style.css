@@ -29,8 +29,8 @@ body {
 }
 
 .lead {
-    font-size: 18px;
-    color: var(--muted)
+    font-size: 22px;
+    color: #235725
 }
 
 .link {
@@ -178,7 +178,10 @@ body {
 /* Hero */
 .hero {
     padding: 60px 0;
-    background: linear-gradient(180deg, #f9fbf9, #fff)
+    background-image: url("../img/casa escuela.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-grid {
@@ -189,20 +192,47 @@ body {
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin: 0 0 12px
+    font-size: 52px;
+    margin: 0 0 12px;
+    color: #1b7548;
 }
 
 .hero-image img {
     width: 100%;
     border-radius: 22px;
-    box-shadow: var(--shadow-2)
+    box-shadow: var(--shadow-2);
 }
 
 .hero-cta {
     display: flex;
+    /* si ya lo usas, se sobreescribe igual */
+    justify-content: center;
+    /* <-- centrado horizontal */
+    align-items: center;
     gap: 12px;
-    margin-top: 12px
+    flex-wrap: wrap;
+    /* para que no se desborden en móvil */
+}
+
+.hero {
+    position: relative;
+}
+
+/* por si no lo estaba */
+.hero-copy {
+    display: inline-block;
+    /* que abrace el contenido */
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: rgba(255, 253, 253, 0.548);
+    /* blanco con poca opacidad */
+    border: 3px solid rgba(255, 255, 255, 0.144);
+    /* borde sutil */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+    /* levanta un poco */
+    backdrop-filter: blur(2px);
+    /* efecto glass (opcional) */
+    -webkit-backdrop-filter: blur(4px);
 }
 
 
@@ -252,6 +282,53 @@ body {
     color: var(--muted)
 }
 
+/* Centrado específico para la sección Nosotros */
+.nosotros {
+    text-align: center;
+    padding-block: 60px;
+    scroll-margin-top: 70px;
+}
+
+.nosotros-head {
+    /* si usas .section-head en esa sección */
+    justify-content: center;
+}
+
+.nosotros h2 {
+    margin: 0 auto 12px;
+}
+
+.nosotros p {
+    max-width: 900px;
+    /* evita líneas muy largas */
+    margin: 0 auto 10px;
+    /* centra el párrafo */
+}
+
+/* botones debajo (puede llamarse .about-actions o .hero-cta en tu HTML) */
+.nosotros .about-actions,
+.nosotros .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+@supports not (padding-block: 1px) {
+    .nosotros {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+}
+
+/* Sections */
+.sede {
+    padding: 72px 0;
+}
+
+.sede--alt {
+    background: var(--surface)
+}
+
 
 /* Cards Niveles */
 .cards {
@@ -282,6 +359,7 @@ body {
 
 /* Admisión */
 .admision {
+    text-align: center;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -348,25 +426,44 @@ body {
 }
 
 
-/* Contacto */
-.grid-2 {
+/* ===== Contacto como cards ===== */
+.contact-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px
+    gap: 12px;
+    padding: 16px;
+    background-color: #fffded;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
+.contact-header h3 {
+    margin: 0;
+    color: var(--green);
+}
+
+.contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-list li {
+    margin: 6px 0;
+}
+
+.contact-map {
     border-radius: 12px;
-    border: 1px solid #dfe7e2;
-    margin: 8px 0
+    overflow: hidden;
+    box-shadow: var(--shadow-1);
+    border: 1px solid #8bac97;
 }
 
-.contact-form button {
-    margin-top: 8px
+.contact-map iframe {
+    width: 100%;
+    height: 230px;
+    /* puedes subir a 260–280 si quieres el mapa más alto */
+    border: 0;
+    display: block;
 }
+
 
 
 /* Footer */
@@ -398,9 +495,9 @@ body {
 .wa-btn {
     position: fixed;
     right: 18px;
-    bottom: 18px;
-    width: 56px;
-    height: 56px;
+    bottom: 32px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: #25D366;
     color: #fff;
