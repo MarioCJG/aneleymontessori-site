@@ -1,201 +1,262 @@
-<%- include('partials/navbar') %>
-
-<section id="hero" class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <h1>Comunidad Aneley Montessori</h1>
-      <p class="lead">
-        Ambientes preparados, autonomía y respeto por los ritmos de la infancia.
-        Educación con propósito en vínculo con la naturaleza y la comunidad.
-      </p>
-      <div class="hero-cta">
-        <a href="#admision" class="btn btn--primary">Postula aquí</a>
-      </div>
+<%- include('layout', { body: `
+<section id="inicio" class="section hero">
+  <div class="hero__text">
+    <h1>Aneley Montessori</h1>
+    <p>Comunidad educativa basada en la pedagogía Montessori.</p>
+    <div class="hero-cta">
+      <a class="btn btn--outline" href="#admision">Protocolo de admisión</a>
+      <a class="btn btn--primary" href="#admision">Formulario de postulación</a>
     </div>
-    <figure class="hero-image">
-      <img src="/img/hero.png" alt="Aneley Montessori" />
-    </figure>
+  </div>
+
+  <!-- Galería deslizable lateral -->
+  <div class="gallery" aria-label="Galería de imágenes">
+    <!-- Coloca tus imágenes en /public/img y referencia aquí -->
+    <img src="/img/galeria/galeria-1.jpg" alt="Galería 1" />
+    <img src="/img/galeria/galeria-2.jpg" alt="Galería 2" />
+    <img src="/img/galeria/galeria-3.jpg" alt="Galería 3" />
+    <img src="/img/galeria/galeria-4.jpg" alt="Galería 4" />
+    <img src="/img/galeria/galeria-5.jpg" alt="Galería 5" />
   </div>
 </section>
 
-<section id="nosotros" class="nosotros">
-  <div class="container">
-    <h2>Nosotros</h2>
-    <p>
-      Somos una comunidad educativa Montessori con foco en autonomía, respeto y
-      naturaleza.
-      <br />
-      <strong>Visión:</strong> Ser un referente Montessori con enfoque en
-      comunidad, naturaleza y autonomía.
-      <br />
-      <strong>Misión:</strong> Potenciar el desarrollo integral de niñas y niños
-      en un ambiente preparado y respetuoso.
-    </p>
+<section id="nosotros" class="section section--alt">
+  <h2>Nosotros</h2>
 
-    <div class="hero-cta" style="margin-top: 10px">
-      <a class="btn btn--outline" target="_blank" href="#"
-        >Reglamento Interno</a
-      >
-      <a class="btn btn--outline" target="_blank" href="#"
-        >Proyecto Educativo</a
-      >
+  <article class="split">
+    <div class="split__media">
+      <img src="/img/nosotros/historia.jpg" alt="Nuestra historia" />
     </div>
-  </div>
-</section>
+    <div class="split__content">
+      <h3>Nuestra Historia</h3>
+      <p>Breve reseña histórica…</p>
+    </div>
+  </article>
 
-<section id="sede" class="sede sede--alt">
-  <div class="container">
-    <h2>Jardín Infantil</h2>
-    <div class="cards">
-      <% niveles.forEach(function(n){ if(n.nombre==='Comunidad Infantil' ||
-      n.nombre==='Casa de Niños'){ %>
-      <article class="card">
-        <h3><%= n.nombre %></h3>
-        <ul class="meta">
-          <li><strong>Edades:</strong> <%= n.edades %></li>
-          <li><strong>Cupos:</strong> <%= n.cupos %></li>
-          <li><strong>Guías:</strong> <%= n.guias.join(', ') %></li>
-        </ul>
-      </article>
-      <% } }); %>
-    </div>
-    <h2>Escuela Libre</h2>
-    <div class="cards">
-      <% niveles.forEach(function(n){ if(n.nombre.indexOf('Taller')===0){ %>
-      <article class="card">
-        <h3><%= n.nombre %></h3>
-        <ul class="meta">
-          <li><strong>Edades:</strong> <%= n.edades %></li>
-          <li><strong>Cupos:</strong> <%= n.cupos %></li>
-          <li><strong>Guías:</strong> <%= n.guias.join(', ') %></li>
-        </ul>
-      </article>
-      <% } }); %>
-    </div>
-  </div>
-</section>
-
-<section id="admision" class="section section--accent">
-  <div class="container admision">
-    <div class="admision-copy">
-      <h2>Admisión 2026</h2>
-      <p>Revisa el protocolo y completa el formulario de postulación.</p>
-      <div class="hero-cta">
-        <a class="btn btn--outline" target="_blank" href="#"
-          >Protocolo de admisión</a
-        >
-        <a class="btn btn--primary" target="_blank" href="#"
-          >Formulario de postulación</a
-        >
-      </div>
-    </div>
-    <div class="admision-badge">Nuevo Proceso</div>
-  </div>
-</section>
-
-<section id="noticias" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Noticias</h2>
-      <a class="link" href="#">Ver todas →</a>
-    </div>
-
-    <div class="news">
-      <% noticias.forEach(function(n){ %>
-      <article class="news-card">
-        <figure><img src="<%= n.img %>" alt="<%= n.titulo %>" /></figure>
-        <div class="news-body">
-          <span class="news-date"><%= n.fecha %></span>
-          <h3><%= n.titulo %></h3>
-          <p><%= n.resumen %></p>
-          <a href="<%= n.url %>" class="link">Leer más</a>
+  <div class="cards-grid">
+    <article class="card">
+      <img src="/img/nosotros/vision-mision.jpg" alt="Visión y Misión" />
+      <div class="card__body">
+        <h4>Visión – Misión</h4>
+        <div class="btn-row">
+          <a class="btn btn--outline" target="_blank" href="#"
+            >Reglamento Interno</a
+          >
+          <a class="btn btn--primary" target="_blank" href="#"
+            >Proyecto Educativo</a
+          >
         </div>
-      </article>
-      <% }); %>
-    </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="/img/nosotros/perfil-ninos.jpg"
+        alt="Perfil del niño y niña Aneley"
+      />
+      <div class="card__body">
+        <h4>Perfil del niño y niña Aneley</h4>
+        <p>Descripción breve…</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="/img/nosotros/perfil-familia.jpg"
+        alt="Perfil de la familia Aneley"
+      />
+      <div class="card__body">
+        <h4>Perfil de la familia Aneley</h4>
+        <p>Descripción breve…</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="/img/nosotros/perfil-equipo.jpg"
+        alt="Perfil del equipo docente"
+      />
+      <div class="card__body">
+        <h4>Perfil del equipo docente</h4>
+        <p>Descripción breve…</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<section id="galeria" class="section section--alt">
-  <div class="container">
-    <h2>Galería</h2>
-    <div class="mosaic">
-      <img src="/img/news-1.jpg" alt="Galería 1" />
-      <img src="/img/news-2.jpg" alt="Galería 2" />
-      <img src="/img/news-3.jpg" alt="Galería 3" />
-      <img src="/img/news-1.jpg" alt="Galería 4" />
-      <img src="/img/news-2.jpg" alt="Galería 5" />
-      <img src="/img/news-3.jpg" alt="Galería 6" />
+<section id="jardin" class="section">
+  <h2>Jardín Infantil</h2>
+
+  <article class="split">
+    <div class="split__media">
+      <img src="/img/jardin/comunidad-infantil.jpg" alt="Comunidad infantil" />
     </div>
+    <div class="split__content">
+      <h3>Comunidad Infantil</h3>
+      <p>Foto y descripción…</p>
+    </div>
+  </article>
+
+  <article class="split">
+    <div class="split__media">
+      <img src="/img/jardin/casa-ninos.jpg" alt="Casa de niños" />
+    </div>
+    <div class="split__content">
+      <h3>Casa de Niños</h3>
+      <p>Foto y descripción…</p>
+    </div>
+  </article>
+</section>
+
+<section id="escuela" class="section section--alt">
+  <h2>Escuela Libre</h2>
+
+  <div class="cards-grid">
+    <article class="card">
+      <img src="/img/escuela/taller-1.jpg" alt="Taller 1" />
+      <div class="card__body">
+        <h4>Taller 1</h4>
+        <p>Foto y descripción…</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="/img/escuela/taller-2.jpg" alt="Taller 2" />
+      <div class="card__body">
+        <h4>Taller 2</h4>
+        <p>Foto y descripción…</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="/img/escuela/taller-3.jpg" alt="Taller 3" />
+      <div class="card__body">
+        <h4>Taller 3</h4>
+        <p>Foto y descripción…</p>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="mt">Vida escolar</h3>
+  <div class="chips">
+    <span class="chip">Educación cósmica</span>
+    <span class="chip">Escuela para padres</span>
+    <span class="chip">Campamento</span>
+    <span class="chip">Salidas pedagógicas</span>
+    <span class="chip">Galas artísticas Aneley</span>
+  </div>
+
+  <h3 class="mt">Talleres extra programáticos</h3>
+  <div class="cards-grid">
+    <article class="card">
+      <img src="/img/talleres/teatro.jpg" alt="Teatro" />
+      <div class="card__body"><h4>Teatro</h4></div>
+    </article>
+    <article class="card">
+      <img src="/img/talleres/danza.jpg" alt="Danza" />
+      <div class="card__body"><h4>Danza</h4></div>
+    </article>
+    <article class="card">
+      <img src="/img/talleres/cocina.jpg" alt="Laboratorio de cocina" />
+      <div class="card__body"><h4>Laboratorio de cocina</h4></div>
+    </article>
+    <article class="card">
+      <img src="/img/talleres/ilustracion.jpg" alt="Ilustración científica" />
+      <div class="card__body"><h4>Ilustración científica</h4></div>
+    </article>
+  </div>
+
+  <h3 class="mt">Celebraciones</h3>
+  <div class="mosaic">
+    <img src="/img/celebraciones/familia.jpg" alt="Día de la familia" />
+    <img
+      src="/img/celebraciones/montessori.jpg"
+      alt="Natalicio María Montessori"
+    />
+    <img
+      src="/img/celebraciones/costumbrista.jpg"
+      alt="Fiestas costumbristas"
+    />
+  </div>
+</section>
+
+<section id="admision" class="section">
+  <h2>Admisión 2026</h2>
+  <div class="btn-row">
+    <a class="btn btn--outline" target="_blank" href="#"
+      >Protocolo de admisión</a
+    >
+    <a class="btn btn--primary" target="_blank" href="#"
+      >Formulario de postulación</a
+    >
   </div>
 </section>
 
 <section id="contacto" class="section">
-  <div class="container">
-    <h2>Contacto</h2>
+  <div class="container grid-2">
+    <div>
+      <h2>Contacto</h2>
 
-    <div class="grid-2">
-      <!-- Card: Jardín Infantil -->
-      <article class="card contact-card">
-        <header class="contact-header">
-          <h3>Jardín Infantil</h3>
-        </header>
+      <h3 style="margin-bottom: 6px">Jardín Infantil</h3>
+      <ul class="contact-list">
+        <li>
+          <strong>Teléfono:</strong>
+          <a href="tel:+56912345678">+56 9 1234 5678</a>
+        </li>
+        <li>
+          <strong>Correo:</strong>
+          <a href="mailto:jardin@jardinaneley.com">jardin@jardinaneley.com</a>
+        </li>
+        <li>
+          <strong>Dirección:</strong> Maipú 539, 8071059 San Bernardo, Región
+          Metropolitana
+        </li>
+      </ul>
 
-        <ul class="contact-list">
-          <li>
-            <strong>Teléfono:</strong>
-            <a href="tel:+56912345678">+56 9 1234 5678</a>
-          </li>
-          <li>
-            <strong>Correo:</strong>
-            <a href="mailto:jardin@jardinaneley.com">jardin@jardinaneley.com</a>
-          </li>
-          <li>
-            <strong>Dirección:</strong> Maipú 539, 8071059 San Bernardo, Región
-            Metropolitana
-          </li>
-        </ul>
+      <h3 style="margin: 18px 0 6px">Escuela Libre</h3>
+      <ul class="contact-list">
+        <li>
+          <strong>Teléfono:</strong>
+          <a href="tel:+56987654321">+56 9 8765 4321</a>
+        </li>
+        <li>
+          <strong>Correo:</strong>
+          <a href="mailto:escuela@jardinaneley.com">escuela@jardinaneley.com</a>
+        </li>
+        <li>
+          <strong>Dirección:</strong> Av. Portales 3022, San Bernardo, Región
+          Metropolitana
+        </li>
+      </ul>
+    </div>
+    <div class="map">
+      <!-- Jardín Infantil Aneley Montessori -->
+      <iframe
+        src="https://www.google.com/maps?q=Maip%C3%BA%20539,%208071059%20San%20Bernardo,%20Regi%C3%B3n%20Metropolitana&output=embed"
+        width="100%"
+        height="230"
+        style="border: 0"
+        allowfullscreen
+        loading="lazy"
+      >
+      </iframe>
 
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps?q=Maip%C3%BA%20539,%208071059%20San%20Bernardo,%20Regi%C3%B3n%20Metropolitana&output=embed"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-      </article>
+      <div style="height: 12px"></div>
 
-      <!-- Card: Escuela Libre -->
-      <article class="card contact-card">
-        <header class="contact-header">
-          <h3>Escuela Libre</h3>
-        </header>
-
-        <ul class="contact-list">
-          <li>
-            <strong>Teléfono:</strong>
-            <a href="tel:+56987654321">+56 9 8765 4321</a>
-          </li>
-          <li>
-            <strong>Correo:</strong>
-            <a href="mailto:escuela@jardinaneley.com"
-              >escuela@jardinaneley.com</a
-            >
-          </li>
-          <li>
-            <strong>Dirección:</strong> Av. Portales 3022, San Bernardo, Región
-            Metropolitana
-          </li>
-        </ul>
-
-        <div class="contact-map">
-          <iframe
-            src="https://www.google.com/maps?q=Av.%20Portales%203022,%20San%20Bernardo,%20Regi%C3%B3n%20Metropolitana&output=embed"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-      </article>
+      <!-- Escuela Aneley Montessori -->
+      <iframe
+        src="https://www.google.com/maps?q=Av.%20Portales%203022,%20San%20Bernardo,%20Regi%C3%B3n%20Metropolitana&output=embed"
+        width="100%"
+        height="230"
+        style="border: 0"
+        allowfullscreen
+        loading="lazy"
+      >
+      </iframe>
     </div>
   </div>
 </section>
+
+<section id="recursos" class="section">
+  <h2>Recursos para familias</h2>
+  <p>Material de apoyo, guías, enlaces de interés…</p>
+</section>
+` }) %>
