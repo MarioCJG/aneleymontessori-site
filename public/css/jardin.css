@@ -1,0 +1,14 @@
+/* Sección: Jardín Infantil */
+#jardin .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 960px) {
+    #jardin .split {
+        grid-template-columns: 1fr;
+    }
+}

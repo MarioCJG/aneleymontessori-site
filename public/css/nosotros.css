@@ -1,0 +1,142 @@
+#nosotros .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#nosotros .split__media img {
+    border-radius: 14px;
+}
+
+#nosotros .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+#nosotros .card {
+    overflow: hidden;
+}
+
+@media (max-width: 960px) {
+    #nosotros .split {
+        grid-template-columns: 1fr;
+    }
+
+    #nosotros .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    #nosotros .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 100;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    backdrop-filter: blur(2px);
+}
+
+.modal__dialog {
+  position: relative;
+  max-width: 840px;
+  margin: 8vh auto;
+  background: #eeffee url("/img/logo-bg.png") center center no-repeat;
+  background-size: 512px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+  padding: 22px;
+}
+
+.modal__header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #fff;
+    padding: 14px 18px;
+    margin: -22px -22px 10px;
+    border-bottom: 1px solid #eef1f3;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.modal__title {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #1a2325;
+    margin: 0;
+}
+
+.modal__close {
+    border: 0;
+    background: #f3f6f8;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal__close:hover {
+    background: #e8eef2;
+}
+
+.modal__body {
+    font-family: 'Nunito', system-ui, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.75;
+    font-weight: bold;
+    color: #2d3740;
+    max-width: 68ch;
+    margin: 0 auto;
+    padding: 6px 2px 8px;
+    text-wrap: pretty;
+    hyphens: auto;
+}
+
+.modal__body p {
+    margin: 0 0 12px;
+    text-align: start;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .modal__title {
+        font-size: 1.1rem;
+    }
+
+    .modal__dialog {
+        margin: 6vh auto;
+    }
+
+    .modal__body {
+        font-size: 1rem;
+        line-height: 1.7;
+        padding-inline: 2px;
+    }
+}

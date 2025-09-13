@@ -54,7 +54,7 @@ img {
 }
 
 .brand img {
-    height: 120px;
+    height: 150px;
     width: auto;
     border-radius: 8px;
     object-fit: contain;
@@ -62,8 +62,15 @@ img {
 
 .brand__link {
     color: var(--brand);
-    font-weight: 800;
+    font-weight: 700;
     text-decoration: none
+}
+
+.brand a {
+    font-weight: 800;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
 }
 
 .tabs {
@@ -121,18 +128,30 @@ img {
 }
 
 .gallery {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     gap: 12px;
-    overflow: auto;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding-bottom: 6px
+    padding: 12px 0;
 }
 
 .gallery img {
-    width: 340px;
-    scroll-snap-align: start
+    flex: 0 0 auto;
+    width: 200px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+    scroll-snap-align: start;
 }
+
+.gallery {
+    overflow-x: hidden;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
 
 .cards-grid {
     display: grid;
@@ -216,7 +235,6 @@ footer {
     text-align: center
 }
 
-/* Contacto */
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -283,4 +301,23 @@ footer {
     .tabs {
         grid-template-columns: repeat(2, 1fr)
     }
+}
+
+#inicio {
+    background: url("/img/hero.png") center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    padding: 80px 0;
+}
+
+#inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+#inicio .hero__text {
+    position: relative;
+    z-index: 2;
 }

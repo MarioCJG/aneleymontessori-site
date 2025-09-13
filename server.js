@@ -13,9 +13,9 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
+app.use('/docs', express.static(path.join(__dirname, 'public', 'docs')));
 
 app.get("/", (_req, res) => {
-    // Si quieres, puedes enviar data aquí más adelante (galerías, textos, etc.)
     res.render("index", { pageTitle: "Aneley Montessori" });
 });
 

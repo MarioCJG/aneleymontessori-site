@@ -1,0 +1,77 @@
+#escuela .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+#escuela .chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+#escuela .chip {
+    background: #eef2ff;
+    color: #2b4fe1;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+#escuela .mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 960px) {
+    #escuela .cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #escuela .mosaic {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    #escuela .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ====== Galería de Talleres ====== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 960px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.vc {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 6px;
+    vertical-align: middle;
+}
