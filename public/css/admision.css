@@ -1,0 +1,7 @@
+#admision .btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    justify-content: center;
+}

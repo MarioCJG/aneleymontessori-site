@@ -1,30 +1,6 @@
-<footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <h4>Aneley Montessori</h4>
-      <p>Educación Montessori con foco en comunidad, naturaleza y autonomía.</p>
-    </div>
-    <div>
-      <h4>Contacto</h4>
-      <ul>
-        <li>Tel: <a href="tel:+56912345678">+56 9 1234 5678</a></li>
-        <li>
-          Correo:
-          <a href="mailto:contacto@jardinaneley.com"
-            >contacto@jardinaneley.com</a
-          >
-        </li>
-        <li>
-          <a href="https://instagram.com/aneleymontessori" target="_blank"
-            >Instagram</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h4>Dirección</h4>
-      <p>Ciudad, Región — Chile</p>
-    </div>
-  </div>
-  <div class="copy">© <span id="year"></span> Aneley Montessori</div>
+<footer>
+  © <span id="y"></span> Aneley Montessori
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </footer>

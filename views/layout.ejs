@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('partials/head') %>
-  <body>
-    
-    <main id="content"><%- body %></main>
+  <head>
+    <%- include('./partials/head') %>
+  </head>
+  <body class="bg-soft">
+    <%- include('./partials/navbar') %>
+
+    <main class="container"><%- body %></main>
 
     <%- include('partials/footer') %> <%- include('partials/whatsapp-btn') %>
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js?v=2"></script>
   </body>
 </html>
