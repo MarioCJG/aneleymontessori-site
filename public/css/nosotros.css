@@ -12,12 +12,68 @@
 
 #nosotros .cards-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    justify-items: center; 
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
 #nosotros .card {
     overflow: hidden;
+    width: 100%; 
+    max-width: 300px; 
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+#nosotros .card__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+#nosotros .card .btn {
+    margin-top: auto;
+    align-self: center; 
+    margin-bottom: 10px;
+}
+
+/* sección de Visión y Misión */
+.vision-mision-container {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 14px;
+}
+
+.vision-mision-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vision-mision-content h3 {
+    color: #1aa37a;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.vision-mision-content h3:first-child {
+    margin-top: 0;
+}
+
+.vision-mision-content p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.center-buttons {
+    justify-content: center;
+    margin-top: 30px;
 }
 
 @media (max-width: 960px) {
@@ -26,13 +82,39 @@
     }
 
     #nosotros .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+    
+    .vision-mision-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    #nosotros .cards-grid {
+        grid-template-columns: 1fr; 
+        max-width: 400px; 
+    }
+    
+    #nosotros .card {
     }
 }
 
 @media (max-width: 560px) {
-    #nosotros .cards-grid {
-        grid-template-columns: 1fr;
+    .vision-mision-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .center-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 10px;
     }
 }
 
