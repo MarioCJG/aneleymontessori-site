@@ -189,7 +189,7 @@
     font-family: 'Nunito', system-ui, sans-serif;
     font-size: 1.2rem;
     line-height: 1.75;
-    font-weight: bold;
+    font-weight: 600;
     color: #2d3740;
     max-width: 68ch;
     margin: 0 auto;
@@ -200,7 +200,7 @@
 
 .modal__body p {
     margin: 0 0 12px;
-    text-align: start;
+    text-align: center;
 }
 
 body.modal-open {

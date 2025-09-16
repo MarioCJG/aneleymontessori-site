@@ -1,5 +1,24 @@
 <%- include('layout', { body: `
 <section id="hero" class="hero hero--center">
+  <div class="hero__carousel">
+    <div class="hero__slides">
+      <img src="/img/hero/hero1.jpg" alt="Hero 1" />
+      <img src="/img/hero/hero2.jpg" alt="Hero 2" />
+      <img src="/img/hero/hero3.jpg" alt="Hero 3" />
+      <img src="/img/hero/hero4.jpg" alt="Hero 4" />
+      <img src="/img/hero/hero5.jpg" alt="Hero 5" />
+      <img src="/img/hero/hero6.jpg" alt="Hero 6" />
+    </div>
+
+    <!-- Flechas -->
+    <button class="hero__arrow hero__arrow--prev" aria-label="Anterior">
+      ‹
+    </button>
+    <button class="hero__arrow hero__arrow--next" aria-label="Siguiente">
+      ›
+    </button>
+  </div>
+
   <div class="hero__content">
     <img class="hero__logo" src="/img/logo2.png" alt="Aneley Montessori" />
     <h1>Comunidad Aneley Montessori</h1>
@@ -12,17 +31,29 @@
 
 <section id="nosotros" class="section section--alt">
   <div class="container">
-    <h2>Nosotros</h2>
-
     <!-- Visión y Misión -->
     <article class="vision-mision-container">
       <div class="vision-mision-content">
         <h3>Visión</h3>
-        <p>Ser una comunidad de aprendizaje, basada en la filosofía Montessori, que apunta a la formación de personas que desarrollen conciencia de sus necesidades y de las del entorno, que se mantengan en la búsqueda permanente de saberes, de la felicidad y la libertad, siendo respetuosas y críticas del mundo en que vivimos, contribuyendo a la formación de comunidades solidarias, justas y sustentables.</p>
-        
+        <p>
+          Ser una comunidad de aprendizaje, basada en la filosofía Montessori,
+          que apunta a la formación de personas que desarrollen conciencia de
+          sus necesidades y de las del entorno, que se mantengan en la búsqueda
+          permanente de saberes, de la felicidad y la libertad, siendo
+          respetuosas y críticas del mundo en que vivimos, contribuyendo a la
+          formación de comunidades solidarias, justas y sustentables.
+        </p>
+
         <h3>Misión</h3>
-        <p>Somos una comunidad formativa, laica que busca guiar a niñas y niños hacia un aprendizaje activo y personal de desarrollo humano en los planos espiritual, social, cognitivo y emocional, a través del respeto y valoración de sí mismo y del entorno, desarrollando una conciencia transformadora de un mundo de paz que celebre la diversidad biológica, cultural, sexual y funcional.</p>
-        
+        <p>
+          Somos una comunidad formativa, laica que busca guiar a niñas y niños
+          hacia un aprendizaje activo y personal de desarrollo humano en los
+          planos espiritual, social, cognitivo y emocional, a través del respeto
+          y valoración de sí mismo y del entorno, desarrollando una conciencia
+          transformadora de un mundo de paz que celebre la diversidad biológica,
+          cultural, sexual y funcional.
+        </p>
+
         <div class="btn-row center-buttons">
           <a
             class="btn btn--outline"
@@ -46,7 +77,12 @@
 
       <div class="split__content">
         <h3>Nuestra Historia</h3>
-        <p>Creado en octubre 2016 por la Familia Velásquez Norambuena, el Jardín Infantil Aneley Montessori abrió sus puertas en marzo de 2017 para recibir a familias de San Bernardo que buscaban una alternativa educativa cálida y acogedora basada en la crianza respetuosa.</p>
+        <p>
+          Creado en octubre 2016 por la Familia Velásquez Norambuena, el Jardín
+          Infantil Aneley Montessori abrió sus puertas en marzo de 2017 para
+          recibir a familias de San Bernardo que buscaban una alternativa
+          educativa cálida y acogedora basada en la crianza respetuosa.
+        </p>
         <button class="btn btn--outline" id="btnHistoria">Ver</button>
       </div>
     </article>
@@ -63,7 +99,7 @@
 
       <div class="modal__dialog" role="document">
         <header class="modal__header">
-          <h3 id="historiaTitle" class="modal__title">Nuestra Historia</h3>
+          <h3 id="historiaTitle" class="modal__title">Reseña Historia</h3>
           <button class="modal__close" aria-label="Cerrar" data-close-modal>
             &times;
           </button>
@@ -71,23 +107,51 @@
 
         <div class="modal__body">
           <p>
-            Creado en octubre 2016 por la Familia Velásquez Norambuena, el
-            Jardín Infantil Aneley Montessori abrió sus puertas en marzo de 2017
-            para recibir a familias de San Bernardo que buscaban una alternativa
-            educativa cálida y acogedora basada en la crianza respetuosa.
+            - Creado en Octubre 2016 por la Familia Velásquez Norambuena, el
+            Jardín Infantil Aneley Montessori, abre sus puertas en Marzo del año
+            2017, para recibir a familias de la comuna de San Bernardo, que se
+            encuentran en la búsqueda de un lugar cálido y acogedor para sus
+            niños y niñas en edad pre-escolar.
           </p>
           <p>
-            Iniciamos atendiendo a 20 familias con niños de 2 a 6 años, siendo
-            en ese entonces una de las pocas opciones Montessori en la comuna.
-            Nuestro propósito siempre ha sido brindar una educación a escala
-            humana, centrada en las capacidades innatas de cada niño, a través
-            de ambientes preparados y guías especializadas.
+            - Creado en Octubre 2016 por la Familia Velásquez Norambuena, el
+            Jardín Infantil Aneley Montessori, abre sus puertas en Marzo del año
+            2017, para recibir a familias de la comuna de San Bernardo, que se
+            encuentran en la búsqueda de un lugar cálido y acogedor para sus
+            niños y niñas en edad pre-escolar.
           </p>
           <p>
-            En respuesta a la creciente demanda, en 2020 ampliamos nuestro
-            proyecto con la Escuela Libre Aneley Montessori para educación
-            básica, consolidando así nuestro compromiso con una educación
-            alternativa en el sector sur de Santiago.
+            - Como antecedentes, en la comuna solo existía un espacio de educación
+            preescolar que contaba con la metodología Montessori, es por esto
+            que se vio una necesidad de contar con más espacios para la comuna
+            de San Bernardo.
+          </p>
+          <p>
+            - Nuestro jardín infantil se inicia con el firme propósito de brindar
+            a la comunidad otra alternativa en educación; una educación a escala
+            humana, con un enfoque centralizado en las capacidades reales e
+            innatas del niño donde a través de un ambiente preparado y guías
+            especializadas.
+          </p>
+          <p>
+            - Ubicado en calle Maipú N°539, se habilitan salones que cuentan con
+            todas las áreas del método, además del complemento de la realización
+            de talleres de cocina y de huerta, aportando a la experiencia de
+            desarrollo personal de cada niño y niña.
+          </p>
+          <p>
+            - Para dar continuidad y respuesta a la amplia demanda de contar con
+            escuelas libres en el sector sur de la capital; la Sociedad
+            Sostenedora decide abrir un nuevo espacio, llamado Escuela Libre
+            Aneley Montessori, ubicado en Avda. portales N°3022, dispuesto para
+            recibir niños y niñas de 6 a 13 años de edad. Proyecto que lleva ya
+            8 años entregando una alternativa a las familias de nuestra comuna.
+          </p>
+          <p>
+            - Nuestro objetivo es que el niño pueda desarrollar sus capacidades a
+            través de un proceso natural y espontáneo, conectándolo con el
+            entorno y facilitando situaciones de aprendizaje que activen su
+            natural deseo de aprender.
           </p>
         </div>
       </div>
@@ -215,8 +279,17 @@
         />
         <div class="card__body">
           <h4>Perfil del niño y niña Aneley</h4>
-          <p>Nuestros niños son personas en constante desarrollo que van adquiriendo cualidades y habilidades que los constituyen como seres íntegros, coherentes en el pensar, sentir y actuar.</p>
-          <button class="btn btn--outline ver-mas-btn" data-target="perfilNinos">Ver más</button>
+          <p>
+            Nuestros niños son personas en constante desarrollo que van
+            adquiriendo cualidades y habilidades que los constituyen como seres
+            íntegros, coherentes en el pensar, sentir y actuar.
+          </p>
+          <button
+            class="btn btn--outline ver-mas-btn"
+            data-target="perfilNinos"
+          >
+            Ver más
+          </button>
         </div>
       </article>
 
@@ -227,8 +300,17 @@
         />
         <div class="card__body">
           <h4>Perfil de la familia Aneley</h4>
-          <p>Familias comprometidas, responsables y proactivas con la educación de sus hijos, que conocen, validan y aportan al Proyecto Educativo Institucional.</p>
-          <button class="btn btn--outline ver-mas-btn" data-target="perfilFamilia">Ver más</button>
+          <p>
+            Familias comprometidas, responsables y proactivas con la educación
+            de sus hijos, que conocen, validan y aportan al Proyecto Educativo
+            Institucional.
+          </p>
+          <button
+            class="btn btn--outline ver-mas-btn"
+            data-target="perfilFamilia"
+          >
+            Ver más
+          </button>
         </div>
       </article>
 
@@ -239,8 +321,17 @@
         />
         <div class="card__body">
           <h4>Perfil del equipo docente</h4>
-          <p>Nuestras guías Montessori son profesionales profundamente comprometidas con la infancia, que comprenden y respetan el proceso único de desarrollo de cada niño.</p>
-          <button class="btn btn--outline ver-mas-btn" data-target="perfilEquipo">Ver más</button>
+          <p>
+            Nuestras guías Montessori son profesionales profundamente
+            comprometidas con la infancia, que comprenden y respetan el proceso
+            único de desarrollo de cada niño.
+          </p>
+          <button
+            class="btn btn--outline ver-mas-btn"
+            data-target="perfilEquipo"
+          >
+            Ver más
+          </button>
         </div>
       </article>
     </div>
@@ -251,11 +342,22 @@
       <div class="modal__dialog" role="document">
         <header class="modal__header">
           <h3 class="modal__title">Perfil del niño y niña Aneley</h3>
-          <button class="modal__close" aria-label="Cerrar" data-close-modal>&times;</button>
+          <button class="modal__close" aria-label="Cerrar" data-close-modal>
+            &times;
+          </button>
         </header>
         <div class="modal__body">
-          <p>Nuestros niños son personas en constante desarrollo que van adquiriendo cualidades y habilidades que los constituyen como seres íntegros, coherentes en el pensar, sentir y actuar. Desarrollan su autonomía y autodisciplina, asumiendo progresivamente mayor responsabilidad de sus actos y decisiones.</p>
-          <p>Practican la solidaridad, empatía y respeto hacia la diversidad, resolviendo diferencias de manera armoniosa mediante el diálogo.</p>
+          <p>
+            Nuestros niños son personas en constante desarrollo que van
+            adquiriendo cualidades y habilidades que los constituyen como seres
+            íntegros, coherentes en el pensar, sentir y actuar. Desarrollan su
+            autonomía y autodisciplina, asumiendo progresivamente mayor
+            responsabilidad de sus actos y decisiones.
+          </p>
+          <p>
+            Practican la solidaridad, empatía y respeto hacia la diversidad,
+            resolviendo diferencias de manera armoniosa mediante el diálogo.
+          </p>
         </div>
       </div>
     </div>
@@ -265,11 +367,22 @@
       <div class="modal__dialog" role="document">
         <header class="modal__header">
           <h3 class="modal__title">Perfil de la familia Aneley</h3>
-          <button class="modal__close" aria-label="Cerrar" data-close-modal>&times;</button>
+          <button class="modal__close" aria-label="Cerrar" data-close-modal>
+            &times;
+          </button>
         </header>
         <div class="modal__body">
-          <p>Familias comprometidas, responsables y proactivas con la educación de sus hijos, que conocen, validan y aportan al Proyecto Educativo Institucional. Participan activamente en la comunidad educativa, mantienen un trato respetuoso y cordial, y promueven la igualdad de género y la diversidad en todos los ámbitos.</p>
-          <p>Se involucran en el proceso de transformación hacia una educación no sexista y sustentable.</p>
+          <p>
+            Familias comprometidas, responsables y proactivas con la educación
+            de sus hijos, que conocen, validan y aportan al Proyecto Educativo
+            Institucional. Participan activamente en la comunidad educativa,
+            mantienen un trato respetuoso y cordial, y promueven la igualdad de
+            género y la diversidad en todos los ámbitos.
+          </p>
+          <p>
+            Se involucran en el proceso de transformación hacia una educación no
+            sexista y sustentable.
+          </p>
         </div>
       </div>
     </div>
@@ -279,11 +392,24 @@
       <div class="modal__dialog" role="document">
         <header class="modal__header">
           <h3 class="modal__title">Perfil del equipo docente</h3>
-          <button class="modal__close" aria-label="Cerrar" data-close-modal>&times;</button>
+          <button class="modal__close" aria-label="Cerrar" data-close-modal>
+            &times;
+          </button>
         </header>
         <div class="modal__body">
-          <p>Nuestras guías Montessori son profesionales profundamente comprometidas con la infancia, que comprenden y respetan el proceso único de desarrollo de cada niño. Su actuar refleja una vocación genuina por acompañar, observar y guiar, promoviendo la autonomía, el respeto mutuo y el aprendizaje significativo.</p>
-          <p>Caracterizadas por su personalidad serena, observadora, paciente y empática, crean ambientes emocionalmente seguros y acogedores. Actúan con gracia, cortesía y coherencia ética, modelando con su ejemplo los valores que desean cultivar.</p>
+          <p>
+            Nuestras guías Montessori son profesionales profundamente
+            comprometidas con la infancia, que comprenden y respetan el proceso
+            único de desarrollo de cada niño. Su actuar refleja una vocación
+            genuina por acompañar, observar y guiar, promoviendo la autonomía,
+            el respeto mutuo y el aprendizaje significativo.
+          </p>
+          <p>
+            Caracterizadas por su personalidad serena, observadora, paciente y
+            empática, crean ambientes emocionalmente seguros y acogedores.
+            Actúan con gracia, cortesía y coherencia ética, modelando con su
+            ejemplo los valores que desean cultivar.
+          </p>
         </div>
       </div>
     </div>
@@ -292,26 +418,58 @@
 
 <section id="jardin" class="section">
   <div class="container">
-    <h2>Jardín Infantil</h2>
+    <h2 class="tt" >Jardín Infantil</h2>
 
     <article class="split">
       <div class="split__media">
-        <img src="/img/jardin/comunidad-infantil.jpg" alt="Comunidad infantil" />
+        <img
+          src="/img/jardin/comunidad-infantil.jpg"
+          alt="Comunidad infantil"
+        />
       </div>
       <div class="split__content">
         <h3>Comunidad Infantil (2 a 4 años)</h3>
-        <p>La Comunidad Infantil es el primer espacio preparado dentro del enfoque Montessori para niños y niñas entre 2 y 4 años. Es un ambiente cuidadosamente diseñado para acoger las necesidades físicas, emocionales y cognitivas de esta etapa tan importante del desarrollo.</p>
-        <p>En este nivel, los niños exploran el mundo a través del movimiento, el lenguaje y la experiencia directa con materiales concretos. Se fomenta su autonomía, independencia, coordinación y sentido del orden, respetando siempre sus ritmos y etapas.</p>
-        <p>A través de actividades prácticas, sensoriales y de vida cotidiana, los niños aprenden a hacer por sí mismos, desarrollan la concentración, la voluntad y el amor por el aprendizaje.</p>
+        <p>
+          La Comunidad Infantil es el primer espacio preparado dentro del
+          enfoque Montessori para niños y niñas entre 2 y 4 años. Es un ambiente
+          cuidadosamente diseñado para acoger las necesidades físicas,
+          emocionales y cognitivas de esta etapa tan importante del desarrollo.
+        </p>
+        <p>
+          En este nivel, los niños exploran el mundo a través del movimiento, el
+          lenguaje y la experiencia directa con materiales concretos. Se fomenta
+          su autonomía, independencia, coordinación y sentido del orden,
+          respetando siempre sus ritmos y etapas.
+        </p>
+        <p>
+          A través de actividades prácticas, sensoriales y de vida cotidiana,
+          los niños aprenden a hacer por sí mismos, desarrollan la
+          concentración, la voluntad y el amor por el aprendizaje.
+        </p>
       </div>
     </article>
 
     <article class="split">
       <div class="split__content">
         <h3>Casa de Niños (3 a 6 años)</h3>
-        <p>La Casa de Niños es un ambiente Montessori diseñado para niños y niñas de 3 a 6 años, donde se consolidan los aprendizajes adquiridos y se abren nuevas oportunidades para el desarrollo de la independencia, el pensamiento lógico, la voluntad y la concentración profunda.</p>
-        <p>Se introducen materiales científicos, matemáticos, lingüísticos y culturales que permiten al niño explorar el mundo con curiosidad y asombro, según sus propios intereses y ritmos. El trabajo es más intencionado y sostenido, permitiendo a los niños desarrollar la capacidad de tomar decisiones, planificar su jornada y resolver problemas de forma autónoma.</p>
-        <p>En este nivel florece la interacción social, el trabajo en grupo y la colaboración, en un clima de respeto y responsabilidad compartida.</p>
+        <p>
+          La Casa de Niños es un ambiente Montessori diseñado para niños y niñas
+          de 3 a 6 años, donde se consolidan los aprendizajes adquiridos y se
+          abren nuevas oportunidades para el desarrollo de la independencia, el
+          pensamiento lógico, la voluntad y la concentración profunda.
+        </p>
+        <p>
+          Se introducen materiales científicos, matemáticos, lingüísticos y
+          culturales que permiten al niño explorar el mundo con curiosidad y
+          asombro, según sus propios intereses y ritmos. El trabajo es más
+          intencionado y sostenido, permitiendo a los niños desarrollar la
+          capacidad de tomar decisiones, planificar su jornada y resolver
+          problemas de forma autónoma.
+        </p>
+        <p>
+          En este nivel florece la interacción social, el trabajo en grupo y la
+          colaboración, en un clima de respeto y responsabilidad compartida.
+        </p>
       </div>
       <div class="split__media">
         <img src="/img/jardin/casa-ninos.jpg" alt="Casa de niños" />
@@ -321,7 +479,7 @@
 </section>
 
 <section id="escuela" class="section section--alt">
-  <h2>Escuela Libre</h2>
+  <h2 class="tt" >Escuela Libre</h2>
 
   <div class="cards-grid">
     <article class="card">
@@ -347,7 +505,7 @@
     </article>
   </div>
 
-  <h3 class="mt">Vida escolar</h3>
+  <h3 class="mt tt">Vida escolar</h3>
   <div class="chips">
     <span class="chip"
       ><img src="/img/escuela/vida-educacion-cosmica.jpg" class="vc" />
@@ -370,7 +528,7 @@
     >
   </div>
 
-  <h3 class="mt">Talleres extra programáticos</h3>
+  <h3 class="mt tty">Talleres extra programáticos</h3>
   <div class="cards-grid">
     <article class="card">
       <img src="/img/talleres/teatro.jpg" alt="Teatro" data-gallery="teatro" />
@@ -425,7 +583,7 @@
     </div>
   </div>
 
-  <h3 class="mt">Celebraciones</h3>
+  <h3 class="mt tty">Celebraciones</h3>
   <div class="mosaic">
     <img src="/img/celebraciones/familia.jpg" alt="Día de la familia" />
     <img
@@ -440,7 +598,7 @@
 </section>
 
 <section id="admision" class="section">
-  <h2>Admisión 2026</h2>
+  <h2 class="tt" >Admisión 2026</h2>
   <div class="btn-row">
     <a
       class="btn btn--outline"
@@ -457,7 +615,7 @@
 
 <section id="contacto" class="section">
   <div class="container">
-    <h2>Contacto</h2>
+    <h2 class="tt" >Contacto</h2>
 
     <div class="cards-grid">
       <!-- Card Jardín Infantil -->
@@ -525,10 +683,10 @@
   </div>
 </section>
 
-<section id="recursos" class="section">
+<section id="recursos" class="section tt">
   <h2>Recursos para familias</h2>
   <a
-    class="btn btn--primary"
+    class="btn btn--primary "
     href="https://www.montessorivalparaiso.org/wawauta/recursos-para-familia/"
     target="_blank"
     rel="noopener noreferrer"

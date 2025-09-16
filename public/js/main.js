@@ -13,7 +13,7 @@ const sections = [...document.querySelectorAll('section[id]')];
 const tabs = [...document.querySelectorAll('.tabs .tab')];
 
 const setActive = () => {
-    const y = window.scrollY + 120; 
+    const y = window.scrollY + 120;
     let current = sections[0]?.id;
     for (const s of sections) {
         if (s.offsetTop <= y) current = s.id;
@@ -163,4 +163,50 @@ if (gallery) {
         open();
     });
 })();
+
+// ==== Carrusel del HERO con autoplay + flechas ====
+(function () {
+    const hero = document.querySelector('#hero');
+    if (!hero) return;
+
+    const track = hero.querySelector('.hero__slides');
+    const slides = [...hero.querySelectorAll('.hero__slides img')];
+    const prevBtn = hero.querySelector('.hero__arrow--prev');
+    const nextBtn = hero.querySelector('.hero__arrow--next');
+
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+    const total = slides.length;
+    const INTERVAL_MS = 5000;
+
+    // Mueve el carrusel al índice dado
+    const goTo = (i) => {
+        index = (i + total) % total; // wrap
+        track.style.transform = `translateX(${index * -100}%)`;
+    };
+
+    // Controles
+    const next = () => goTo(index + 1);
+    const prev = () => goTo(index - 1);
+
+    // Autoplay controlado por JS
+    let timer = setInterval(next, INTERVAL_MS);
+    const resetAutoplay = () => {
+        clearInterval(timer);
+        timer = setInterval(next, INTERVAL_MS);
+    };
+
+    // Eventos
+    nextBtn?.addEventListener('click', () => { next(); resetAutoplay(); });
+    prevBtn?.addEventListener('click', () => { prev(); resetAutoplay(); });
+
+    // Opcional: pausa al pasar el mouse
+    hero.addEventListener('mouseenter', () => clearInterval(timer));
+    hero.addEventListener('mouseleave', resetAutoplay);
+
+    // Ajuste inicial por si carga en medio
+    goTo(0);
+})();
+
 

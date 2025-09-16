@@ -12,10 +12,12 @@
 
 #escuela .chip {
     background: #eef2ff;
-    color: #2b4fe1;
+    color: #1aa37a;
     padding: 6px 10px;
     border-radius: 999px;
     font-weight: 700;
+    text-align: center;
+    background-color: rgb(255, 249, 234);
 }
 
 #escuela .mosaic {
@@ -74,4 +76,22 @@
     object-fit: cover;
     margin-right: 6px;
     vertical-align: middle;
+}
+
+#escuela .card img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#escuela .card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.tt {
+    padding-left: 5%;
+}
+
+.tty {
+    padding-left: 5%;
+    font-size: 1.4rem;
 }
