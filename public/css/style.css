@@ -1,10 +1,10 @@
 :root {
-    --bg: #f6f7fb;
+    --bg: rgb(255, 249, 234);
     --surface: #ffffff;
     --text: #212529;
     --muted: #6c757d;
     --green: #1aa37a;
-    --brand: #1846b8;
+    --brand: #1aa37a;
     --shadow: 0 10px 20px rgba(0, 0, 0, .08);
 }
 
@@ -41,7 +41,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--surface);
+    background: rgb(255, 249, 234);
     box-shadow: var(--shadow)
 }
 
@@ -50,7 +50,7 @@ img {
     align-items: center;
     gap: 12px;
     padding: 10px 16px;
-    border-bottom: 1px solid #eee
+    border-bottom: 1px solid #1aa37a,
 }
 
 .brand img {
@@ -90,7 +90,7 @@ img {
 }
 
 .tab:hover {
-    background: #f1f4ff
+    background: #f6ce5f
 }
 
 .tab.is-active {
@@ -321,3 +321,4 @@ footer {
     position: relative;
     z-index: 2;
 }
+
