@@ -222,3 +222,46 @@ body.modal-open {
         padding-inline: 2px;
     }
 }
+
+.super-card {
+    border-color: rgb(255, 231, 165);
+    border-width: 5px;  
+    border-style: solid;
+    box-shadow: 0 4px 6px #1aa37a, 0 1px 3px #1aa37a;
+    background-color: rgb(255, 231, 165);
+}
+
+.btn-r {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px #1aa37a, 0 1px 3px #1aa37a;
+}
+
+/* Scroll en modales */
+.modal__body {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.modal__body h1 {
+  color: rgb(217, 170, 42);
+}
+
+/* Estilo de la barra de scroll (más bonito) */
+.modal__body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal__body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal__body::-webkit-scrollbar-thumb {
+  background: #1aa37a;
+  border-radius: 10px;
+}
+
+.modal__body::-webkit-scrollbar-thumb:hover {
+  background: #148a65;
+}
