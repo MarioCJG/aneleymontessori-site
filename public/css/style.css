@@ -189,6 +189,8 @@ img {
     margin-bottom: 24px
 }
 
+/* ESTILO DE VIDA ESCOLAR - CHIPS */
+
 .chips {
     display: flex;
     gap: 8px;
@@ -197,11 +199,14 @@ img {
 
 .chip {
     background: #eef2ff;
-    color: #2b4fe1;
+    color: #2e4dca;
     padding: 6px 10px;
     border-radius: 999px;
     font-weight: 700
 }
+
+
+
 
 .mosaic {
     display: grid;
@@ -322,3 +327,216 @@ footer {
     z-index: 2;
 }
 
+
+/* Estilos  para la sección de admisión */
+.admision {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.admision .tt {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.admision .info-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.admision .info-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.admision .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+
+/* Estilos para la sección de Talleres Extra Programáticos */
+.talleres-extra {
+    width: 100%;
+    background: #fafafa;
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Título de la sección */
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-seccion h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.titulo-seccion p {
+    font-size: 1.2rem;
+    color: #4caf50;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid de talleres - 2x2 para desktop */
+.talleres-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+/* Cards individuales */
+.taller-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.taller-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Imagen de la card */
+.taller-imagen {
+    height: 250px;
+    overflow: hidden;
+}
+
+.taller-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.taller-card:hover .taller-imagen img {
+    transform: scale(1.05);
+}
+
+/* Contenido de la card (texto debajo de la imagen) */
+.taller-contenido {
+    padding: 25px;
+}
+
+/* Colores pasteles distintos para cada card */
+.taller-card:nth-child(1) .taller-contenido {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); /* Verde pastel */
+}
+
+.taller-card:nth-child(2) .taller-contenido {
+    background: linear-gradient(135deg, #f9fbe7 0%, #f0f4c3 100%); /* Amarillo pastel */
+}
+
+.taller-card:nth-child(3) .taller-contenido {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); /* Azul pastel */
+}
+
+.taller-card:nth-child(4) .taller-contenido {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); /* Lila pastel */
+}
+
+.taller-contenido h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000000; /* Negro */
+    font-weight: 600;
+}
+
+.taller-contenido p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000000; /* Negro */
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .talleres-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .talleres-extra {
+        padding: 40px 0;
+    }
+    
+    .titulo-seccion h2 {
+        font-size: 2rem;
+    }
+    
+    .titulo-seccion p {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .taller-imagen {
+        height: 200px;
+    }
+    
+    .taller-contenido {
+        padding: 20px;
+    }
+    
+    .taller-contenido h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .taller-imagen {
+        height: 180px;
+    }
+    
+    .taller-contenido {
+        padding: 15px;
+    }
+    
+    .titulo-seccion h2 {
+        font-size: 1.8rem;
+    }
+    
+    .titulo-seccion p {
+        font-size: 1rem;
+    }
+}
+
+/* Para pantallas muy grandes (más de 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .talleres-grid {
+        gap: 40px;
+    }
+    
+    .taller-imagen {
+        height: 280px;
+    }
+}

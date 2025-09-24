@@ -21,6 +21,7 @@ const setActive = () => {
     tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('href') === `#${current}`));
 };
 window.addEventListener('scroll', setActive);
+
 // Carrusel automático
 window.addEventListener('load', () => {
     const gallery = document.querySelector('.gallery');
@@ -38,7 +39,6 @@ window.addEventListener('load', () => {
         gallery.scrollBy({ left: STEP, behavior: 'smooth' });
     };
 
-    // corre cada 3s
     const start = () => (timer = setInterval(loop, 3000));
     const stop = () => clearInterval(timer);
 
@@ -180,33 +180,70 @@ if (gallery) {
     const total = slides.length;
     const INTERVAL_MS = 5000;
 
-    // Mueve el carrusel al índice dado
     const goTo = (i) => {
-        index = (i + total) % total; // wrap
+        index = (i + total) % total;
         track.style.transform = `translateX(${index * -100}%)`;
     };
 
-    // Controles
     const next = () => goTo(index + 1);
     const prev = () => goTo(index - 1);
 
-    // Autoplay controlado por JS
     let timer = setInterval(next, INTERVAL_MS);
     const resetAutoplay = () => {
         clearInterval(timer);
         timer = setInterval(next, INTERVAL_MS);
     };
 
-    // Eventos
     nextBtn?.addEventListener('click', () => { next(); resetAutoplay(); });
     prevBtn?.addEventListener('click', () => { prev(); resetAutoplay(); });
 
-    // Opcional: pausa al pasar el mouse
     hero.addEventListener('mouseenter', () => clearInterval(timer));
     hero.addEventListener('mouseleave', resetAutoplay);
 
-    // Ajuste inicial por si carga en medio
     goTo(0);
 })();
 
 
+
+
+
+// === ACORDEÓN VIDA ESCOLAR - TEXTO DEBAJO DEL CÍRCULO ===
+(function() {
+    const chipItems = document.querySelectorAll('.chip-item');
+    
+    if (chipItems.length === 0) return;
+    
+    chipItems.forEach(chip => {
+        chip.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const contenido = document.getElementById(targetId);
+            
+            if (!contenido) return;
+            
+            const isActive = this.classList.contains('activo');
+            
+            // Cerrar todos
+            chipItems.forEach(item => item.classList.remove('activo'));
+            document.querySelectorAll('.chip-btn').forEach(btn => btn.classList.remove('activo'));
+            document.querySelectorAll('.contenido-item').forEach(cont => cont.classList.remove('activo'));
+            
+            // Abrir el clickeado (si no estaba activo)
+            if (!isActive) {
+                this.classList.add('activo');
+                this.querySelector('.chip-btn').classList.add('activo');
+                contenido.classList.add('activo');
+                
+                // Scroll suave al contenido
+                setTimeout(() => {
+                    contenido.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest',
+                        inline: 'nearest'
+                    });
+                }, 300);
+            }
+        });
+    });
+    
+    console.log('✅ Acordeón con texto debajo del círculo configurado');
+})();

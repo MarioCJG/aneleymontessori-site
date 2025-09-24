@@ -10,9 +10,9 @@
     border-radius: 14px;
 }
 
+/* OVERRIDE  para cards-grid en #nosotros */
 #nosotros .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important; 
     gap: 24px;
     justify-items: center; 
     max-width: 1000px; 
@@ -32,12 +32,39 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1; 
+    padding: 20px; 
 }
 
 #nosotros .card .btn {
     margin-top: auto;
     align-self: center; 
     margin-bottom: 10px;
+}
+
+
+#nosotros .cards-grid .card img {
+    width: 100%;
+    height: 280px; 
+    object-fit: cover; 
+    object-position: center;
+}
+
+
+#nosotros .cards-grid .card h4 {
+    color: #1a6b52;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    min-height: 60px; 
+    display: flex;
+    align-items: center;
+}
+
+#nosotros .cards-grid .card p {
+    flex: 1;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: #555;
+    font-size: 1rem;
 }
 
 /* sección de Visión y Misión */
@@ -76,48 +103,6 @@
     margin-top: 30px;
 }
 
-@media (max-width: 960px) {
-    #nosotros .split {
-        grid-template-columns: 1fr;
-    }
-
-    #nosotros .cards-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px;
-    }
-    
-    .vision-mision-container {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 680px) {
-    #nosotros .cards-grid {
-        grid-template-columns: 1fr; 
-        max-width: 400px; 
-    }
-    
-    #nosotros .card {
-    }
-}
-
-@media (max-width: 560px) {
-    .vision-mision-content h3 {
-        font-size: 1.3rem;
-    }
-    
-    .center-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .center-buttons .btn {
-        width: 100%;
-        max-width: 250px;
-        margin-bottom: 10px;
-    }
-}
-
 .modal {
     position: fixed;
     inset: 0;
@@ -137,14 +122,14 @@
 }
 
 .modal__dialog {
-  position: relative;
-  max-width: 840px;
-  margin: 8vh auto;
-  background: #eeffee url("/img/logo-bg.png") center center no-repeat;
-  background-size: 512px;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
-  padding: 22px;
+    position: relative;
+    max-width: 840px;
+    margin: 8vh auto;
+    background: #eeffee url("/img/logo-bg.png") center center no-repeat;
+    background-size: 512px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+    padding: 22px;
 }
 
 .modal__header {
@@ -179,6 +164,7 @@
     font-size: 22px;
     line-height: 1;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .modal__close:hover {
@@ -196,6 +182,9 @@
     padding: 6px 2px 8px;
     text-wrap: pretty;
     hyphens: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 8px;
 }
 
 .modal__body p {
@@ -203,8 +192,107 @@
     text-align: center;
 }
 
+.modal__body h1 {
+    color: #1aa37a;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
 body.modal-open {
     overflow: hidden;
+}
+
+/* Scroll en modales */
+.modal__body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal__body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal__body::-webkit-scrollbar-thumb {
+    background: #1aa37a;
+    border-radius: 10px;
+}
+
+.modal__body::-webkit-scrollbar-thumb:hover {
+    background: #148a65;
+}
+
+.super-card {
+    border-color: rgb(255, 231, 165);
+    border-width: 5px;  
+    border-style: solid;
+    box-shadow: 0 4px 6px #1aa37a, 0 1px 3px #1aa37a;
+    background-color: rgb(255, 231, 165);
+}
+
+.btn-r {
+    background-color: #ffffff75;
+    box-shadow: 0 4px 6px #1aa37a, 0 1px 3px #1aa37a;
+}
+
+/* Estilos para los tres botones en una fila */
+.three-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.three-buttons .btn {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    #nosotros .split {
+        grid-template-columns: 1fr;
+    }
+
+    #nosotros .cards-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+    
+    .vision-mision-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .three-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .three-buttons .btn {
+        min-width: 250px;
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+    #nosotros .cards-grid {
+        grid-template-columns: 1fr; 
+        max-width: 400px; 
+    }
+    
+    #nosotros .cards-grid .card img {
+        height: 240px;
+    }
+    
+    #nosotros .cards-grid .card h4 {
+        min-height: 50px;
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -221,47 +309,34 @@ body.modal-open {
         line-height: 1.7;
         padding-inline: 2px;
     }
+    
+    .vision-mision-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .center-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 10px;
+    }
+    
+    #nosotros .cards-grid .card img {
+        height: 220px;
+    }
+    
+    #nosotros .cards-grid .card h4 {
+        min-height: auto;
+        font-size: 1.1rem;
+    }
 }
 
-.super-card {
-    border-color: rgb(255, 231, 165);
-    border-width: 5px;  
-    border-style: solid;
-    box-shadow: 0 4px 6px #1aa37a, 0 1px 3px #1aa37a;
-    background-color: rgb(255, 231, 165);
-}
-
-.btn-r {
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px #1aa37a, 0 1px 3px #1aa37a;
-}
-
-/* Scroll en modales */
-.modal__body {
-  max-height: 70vh;
-  overflow-y: auto;
-  padding-right: 8px;
-}
-
-.modal__body h1 {
-  color: rgb(217, 170, 42);
-}
-
-/* Estilo de la barra de scroll (más bonito) */
-.modal__body::-webkit-scrollbar {
-  width: 8px;
-}
-
-.modal__body::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.modal__body::-webkit-scrollbar-thumb {
-  background: #1aa37a;
-  border-radius: 10px;
-}
-
-.modal__body::-webkit-scrollbar-thumb:hover {
-  background: #148a65;
+@media (max-width: 560px) {
+    #nosotros .cards-grid {
+        grid-template-columns: 1fr;
+    }
 }

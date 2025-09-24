@@ -1,28 +1,190 @@
-/* Sección: Jardín Infantil */
-#jardin .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    align-items: center;
-    margin-bottom: 24px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+
+/* Estilos específicos para la sección Jardín Infantil */
+.jardin-section {
+    background: linear-gradient(135deg, #f8fdfb 0%, #f0f9f6 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
 }
 
+.jardin-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%231aa37a" opacity="0.1"/><circle cx="60" cy="40" r="1.5" fill="%231aa37a" opacity="0.1"/><circle cx="80" cy="70" r="1" fill="%231aa37a" opacity="0.1"/><circle cx="40" cy="80" r="1.5" fill="%231aa37a" opacity="0.1"/></svg>');
+    z-index: 0;
+}
+
+.jardin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.jardin-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #1a6b52;
+    margin-bottom: 60px;
+    position: relative;
+    font-weight: 700;
+}
+
+.jardin-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #1aa37a, #4ecdc4);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.jardin-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 70px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jardin-split:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Alternar imagen y texto */
+.jardin-split--image-left {
+    grid-template-areas: "media content";
+}
+
+.jardin-split--image-right {
+    grid-template-areas: "content media";
+}
+
+.jardin-media {
+    grid-area: media;
+    overflow: hidden;
+    height: 100%;
+}
+
+.jardin-content {
+    grid-area: content;
+    padding: 40px;
+}
+
+.jardin-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.jardin-split:hover .jardin-media img {
+    transform: scale(1.05);
+}
+
+.jardin-subtitle {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #1a6b52;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.jardin-subtitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #1aa37a;
+    border-radius: 2px;
+}
+
+.jardin-text {
+    color: #4a6b62;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.jardin-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive */
 @media (max-width: 960px) {
-    #jardin .split {
+    .jardin-split {
         grid-template-columns: 1fr;
+        grid-template-areas: "media" "content" !important;
+        gap: 0;
+        margin-bottom: 50px;
+    }
+    
+    .jardin-media {
+        height: 300px;
+    }
+    
+    .jardin-content {
+        padding: 30px 25px;
+    }
+    
+    .jardin-title {
+        font-size: 2.3rem;
+        margin-bottom: 40px;
     }
 }
 
-#jardin p {
-    color: #1aa37a;
-    font-weight: 600;
-    font-style: italic;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-#jardin h3 {
-    font-weight: bold;
-    font-size: 1.4rem;
-    text-align: center;
+@media (max-width: 600px) {
+    .jardin-section {
+        padding: 50px 0;
+    }
+    
+    .jardin-title {
+        font-size: 2rem;
+    }
+    
+    .jardin-content {
+        padding: 25px 20px;
+    }
+    
+    .jardin-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .jardin-text {
+        font-size: 1rem;
+    }
 }
