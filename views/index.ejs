@@ -21,7 +21,8 @@
 
   <div class="hero__content">
     <img class="hero__logo" src="/img/logo2.png" alt="Aneley Montessori" />
-    <h1>Comunidad educativa Aneley Montessori</h1>
+    <h1>Comunidad Educativa</h1>
+    <h1>Aneley Montessori</h1>
     <p class="lead">
       Ambientes preparados, autonomía y respeto por los ritmos de la infancia.
       Educación con propósito en vínculo con la naturaleza y la comunidad.
@@ -340,103 +341,149 @@
 
 
 <!-- Escuela Libre Talleres -->
+<!-- Escuela Libre Talleres -->
 <section id="escuela" class="section section--alt">
-  <h2 class="tt" >Escuela Libre</h2>
+  <h2 class="tt">Escuela Libre</h2>
 
   <div class="cards-grid">
     <article class="card">
       <img src="/img/escuela/taller-1.jpg" alt="Taller 1" />
       <div class="card__body">
-        <h4>Taller 1</h4>
-        <button class="btn btn--outline" id="btnHistoria">Ver</button>
+        <h4>Taller 1: Ayúdame a conocer por mí mismo</h4>
+        <button class="btn btn--outline" id="btnTaller1">Ver más</button>
       </div>
     </article>
     <article class="card">
       <img src="/img/escuela/taller-2.jpg" alt="Taller 2" />
       <div class="card__body">
-        <h4>Taller 2</h4>
-        <button class="btn btn--outline" id="btnHistoria">Ver</button>
+        <h4>Taller 2: Un Camino hacia el Bien Común</h4>
+        <button class="btn btn--outline" id="btnTaller2">Ver más</button>
       </div>
     </article>
     <article class="card">
       <img src="/img/escuela/taller-3.jpg" alt="Taller 3" />
       <div class="card__body">
-        <h4>Taller 3</h4>
-        <button class="btn btn--outline" id="btnHistoria">Ver</button>
+        <h4>Taller 3: Preparación para la Vida</h4>
+        <button class="btn btn--outline" id="btnTaller3">Ver más</button>
       </div>
     </article>
   </div>
+</section>
 
-
-<!-- Vida escolar - Texto debajo del círculo -->
-<h3 class="mt tt">Vida escolar</h3>
-<div class="vida-escolar-acordeon">
-  
-  <div class="chips-contenedor">
-    <!-- Los chips y su contenido asociado van juntos -->
-    <div class="chips-linea">
-      <div class="chip-item" data-target="educacion-cosmica">
-        <button class="chip-btn">
-          <img src="/img/escuela/vida-educacion-cosmica.jpg" class="vc" />
-          <span>Educación cósmica</span>
-        </button>
-      </div>
-      
-      <div class="chip-item" data-target="escuela-padres">
-        <button class="chip-btn">
-          <img src="/img/escuela/vida-escuela-padres.jpg" class="vc" />
-          <span>Escuela para padres</span>
-        </button>
-      </div>
-      
-      <div class="chip-item" data-target="campamento">
-        <button class="chip-btn">
-          <img src="/img/escuela/vida-campamento.jpg" class="vc" />
-          <span>Campamento</span>
-        </button>
-      </div>
-      
-      <div class="chip-item" data-target="salidas">
-        <button class="chip-btn">
-          <img src="/img/escuela/vida-salidas.jpg" class="vc" />
-          <span>Salidas pedagógicas</span>
-        </button>
-      </div>
-      
-      <div class="chip-item" data-target="galas">
-        <button class="chip-btn">
-          <img src="/img/escuela/vida-galas.jpg" class="vc" />
-          <span>Galas artísticas</span>
-        </button>
-      </div>
-    </div>
-    
-    <!-- El contenido aparecerá debajo de los chips -->
-    <div class="contenido-item" id="educacion-cosmica">
-      <p>En nuestro jardín infantil, la Educación Cósmica Montessori conecta a los niños con el universo, fomentando su curiosidad natural y sentido de pertenencia al mundo que les rodea.</p>
-    </div>
-    
-    <div class="contenido-item" id="escuela-padres">
-      <p>Talleres mensuales donde las familias aprenden sobre la metodología Montessori y reciben herramientas para apoyar el desarrollo integral de sus hijos en casa.</p>
-    </div>
-    
-    <div class="contenido-item" id="campamento">
-      <p>Experiencias al aire libre que promueven la independencia, trabajo en equipo y conexión con la naturaleza en un entorno seguro y supervisado.</p>
-    </div>
-    
-    <div class="contenido-item" id="salidas">
-      <p>Visitas educativas a museos, parques y centros culturales que complementan el aprendizaje en el aula y amplían el horizonte de nuestros estudiantes.</p>
-    </div>
-    
-    <div class="contenido-item" id="galas">
-      <p>Eventos especiales donde los niños demuestran sus talentos artísticos, desarrollando confianza y expresión creativa frente a la comunidad educativa.</p>
+<!-- Modal: Taller 1 -->
+<div id="taller1Modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="taller1Title">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__dialog" role="document">
+    <header class="modal__header">
+      <h3 id="taller1Title" class="modal__title">Taller 1: Ayúdame a conocer por mí mismo</h3>
+      <button class="modal__close" aria-label="Cerrar" data-close-modal>&times;</button>
+    </header>
+    <div class="modal__body">
+      <p>En el Taller 1, niños y niñas de 6 a 9 años (1° a 3° básico) inician un viaje de descubrimiento, explorando áreas como Lenguaje, Geometría, Matemática, Historia, Botánica y Zoología, entre otras. Utilizando materiales de la pedagogía científica, aprenden de manera significativa, construyendo su propio aprendizaje.</p>
+      <p>Las tareas domésticas y las actividades de este ambiente fomentan la cohesión grupal y la cooperación, permitiendo a los niños y niñas desarrollar su autonomía y autocuidado. A través de estas experiencias, no solo se construyen conocimientos, sino que también se desarrollan habilidades sociales y un sentido de comunidad, que son fundamentales en esta educación para la paz.</p>
     </div>
   </div>
 </div>
-            
-            
-                        
-                                    
+
+<!-- Modal: Taller 2 -->
+<div id="taller2Modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="taller2Title">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__dialog" role="document">
+    <header class="modal__header">
+      <h3 id="taller2Title" class="modal__title">Taller 2: Un Camino hacia el Bien Común</h3>
+      <button class="modal__close" aria-label="Cerrar" data-close-modal>&times;</button>
+    </header>
+    <div class="modal__body">
+      <p>En el Taller 2, dirigido a niños y niñas de 9 a 12 años (4.° a 6.° básico), se fomenta un profundo interés por el bien común, la justicia y la construcción del propio conocimiento. A través de la metodología de investigación, los estudiantes profundizan en diversas áreas de conocimiento, gestionando activamente sus propios estudios y proyectos.</p>
+      <p>Participan en iniciativas de bienestar social y autogestionan salidas pedagógicas que les permiten explorar el mundo que habitan. Estas experiencias enriquecen su aprendizaje, desarrollan sus habilidades y talentos, y les convierten en agentes de cambio comprometidos con la creación de un futuro más justo y solidario.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Taller 3 -->
+<div id="taller3Modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="taller3Title">
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal__dialog" role="document">
+    <header class="modal__header">
+      <h3 id="taller3Title" class="modal__title">Taller 3: Preparación para la Vida</h3>
+      <button class="modal__close" aria-label="Cerrar" data-close-modal>&times;</button>
+    </header>
+    <div class="modal__body">
+      <p>En el Taller 3, dirigido a niños y niñas de 13 a 14 años (7.° y 8.° básico), se mantiene la filosofía Montessori, adaptándose a la transición al sistema educativo tradicional. Este taller se centra en los desafíos académicos y promueve la expansión y exploración del ambiente externo. Se trabaja de manera práctica y abstracta, fomentando la autonomía y autogestión de los estudiantes.</p>
+      <p>Además, se profundiza en valores como la solidaridad, la empatía, el sentido de comunidad y la paz, preparando a los jóvenes para enfrentar los retos del futuro con confianza y compromiso social.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Vida escolar - Texto debajo del círculo -->
+    <!-- Vida escolar - Texto debajo del círculo -->
+    <h3 class="mt tt">Vida escolar</h3>
+    <div class="vida-escolar-acordeon">
+      
+      <div class="chips-contenedor">
+        <!-- Los chips y su contenido asociado van juntos -->
+        <div class="chips-linea">
+          <div class="chip-item" data-target="educacion-cosmica">
+            <button class="chip-btn">
+              <img src="/img/escuela/vida-educacion-cosmica.jpg" class="vc" />
+              <span>Educación cósmica</span>
+            </button>
+          </div>
+          
+          <div class="chip-item" data-target="escuela-padres">
+            <button class="chip-btn">
+              <img src="/img/escuela/vida-escuela-padres.jpg" class="vc" />
+              <span>Escuela para padres</span>
+            </button>
+          </div>
+          
+          <div class="chip-item" data-target="campamento">
+            <button class="chip-btn">
+              <img src="/img/escuela/vida-campamento.jpg" class="vc" />
+              <span>Campamento</span>
+            </button>
+          </div>
+          
+          <div class="chip-item" data-target="salidas">
+            <button class="chip-btn">
+              <img src="/img/escuela/vida-salidas.jpg" class="vc" />
+              <span>Salidas pedagógicas</span>
+            </button>
+          </div>
+          
+          <div class="chip-item" data-target="galas">
+            <button class="chip-btn">
+              <img src="/img/escuela/vida-galas.jpg" class="vc" />
+              <span>Galas artísticas</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenedor para la carta que aparecerá -->
+        <div class="carta-contenedor">
+          <!-- El contenido aparecerá aquí con JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
   <!-- Talleres extra programáticos CARRUSEL -->
 
 <section class="talleres-extra">
@@ -497,21 +544,58 @@
 
 
 
-      <!-- Celebraciones -->
-
+<!-- Celebraciones -->
+<section class="celebraciones-section">
   <h3 class="mt tty">Celebraciones</h3>
-  <div class="mosaic">
-    <img src="/img/celebraciones/familia.jpg" alt="Día de la familia" />
-    <img
-      src="/img/celebraciones/montessori.jpg"
-      alt="Natalicio María Montessori"
-    />
-    <img
-      src="/img/celebraciones/costumbrista.jpg"
-      alt="Fiestas costumbristas"
-    />
+  <div class="celebraciones-grid">
+    <div class="celebracion-card">
+      <div class="celebracion-img-container">
+        <img src="/img/celebraciones/familia.jpg" alt="Día de la familia" class="celebracion-img" />
+        <div class="celebracion-overlay">
+          <div class="celebracion-content">
+            <p class="celebracion-desc">Una celebración especial donde las familias se reúnen para compartir y fortalecer los lazos comunitarios</p>
+          </div>
+        </div>
+      </div>
+      <div class="celebracion-info">
+        <h4 class="celebracion-title">Día de la Familia</h4>
+      </div>
+    </div>
+    
+    <div class="celebracion-card">
+      <div class="celebracion-img-container">
+        <img src="/img/celebraciones/montessori.jpg" alt="Gala Artística" class="celebracion-img" />
+        <div class="celebracion-overlay">
+          <div class="celebracion-content">
+            <p class="celebracion-desc">Nuestros estudiantes muestran sus talentos en danza, teatro y música en una tarde mágica</p>
+          </div>
+        </div>
+      </div>
+      <div class="celebracion-info">
+        <h4 class="celebracion-title">Gala Artística</h4>
+      </div>
+    </div>
+    
+    <div class="celebracion-card">
+      <div class="celebracion-img-container">
+        <img src="/img/celebraciones/costumbrista.jpg" alt="Fiesta Costumbrista" class="celebracion-img" />
+        <div class="celebracion-overlay">
+          <div class="celebracion-content">
+            <p class="celebracion-desc">Celebramos nuestras tradiciones y cultura con comida típica, bailes y juegos tradicionales</p>
+          </div>
+        </div>
+      </div>
+      <div class="celebracion-info">
+        <h4 class="celebracion-title">Fiesta Costumbrista</h4>
+      </div>
+    </div>
   </div>
 </section>
+
+
+
+
+<!-- Admisión -->
 
     <section id="admision" class="section admision">
         <h2 class="tt">Admisión 2026</h2>

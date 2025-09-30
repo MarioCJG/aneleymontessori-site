@@ -88,21 +88,19 @@
 
 
 
-/* ===== ACORDEÓN VIDA ESCOLAR - TEXTO DEBAJO DEL CÍRCULO ===== */
+/* ===== ACORDEÓN VIDA ESCOLAR - CARTA CON CÍRCULO INTEGRADO ===== */
 .vida-escolar-acordeon {
     max-width: 100%;
     margin: 30px 0;
 }
 
-/* Contenedor principal con flex column */
 .chips-contenedor {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0; /* Sin gap entre items */
+    gap: 0;
 }
 
-/* Línea de chips - siempre en fila */
 .chips-linea {
     display: flex;
     justify-content: center;
@@ -117,8 +115,13 @@
     margin-bottom: 0;
 }
 
+/* Cursor de mano para todos los botones */
+.btn {
+    cursor: pointer;
+}
+
 .chip-btn {
-    background: rgb(255, 249, 234);
+    background: rgba(228, 217, 189, 0.903);
     border: 2px solid transparent;
     border-radius: 999px;
     padding: 20px;
@@ -134,16 +137,16 @@
 }
 
 .chip-btn:hover {
-    background: #f6f0e0;
+    background: #c99c20;
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(26, 163, 122, 0.15);
+    box-shadow: 0 8px 20px rgba(205, 14, 14, 0.15);
 }
 
 .chip-btn.activo {
-    background: linear-gradient(135deg, #1aa37a 0%, #148a65 100%);
+    background: linear-gradient(135deg, #8ca31a 0%, #d4cb22 100%);
     border-color: #1aa37a;
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(26, 163, 122, 0.25);
+    box-shadow: 0 10px 25px rgba(137, 208, 187, 0.25);
 }
 
 .chip-btn .vc {
@@ -177,34 +180,102 @@
 }
 
 .chip-btn.activo span {
-    color: white;
+    color:  #0d5840;
 }
 
-/* CONTENIDO - SIEMPRE debajo del círculo activo */
-.contenido-item {
+/* CARTA EXTENDIDA CON CÍRCULO INTEGRADO */
+.carta-contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carta-item {
     display: none;
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     border: 2px solid #e8f5e9;
     text-align: center;
-    animation: fadeIn 0.4s ease;
-    margin: 20px auto;
-    max-width: 600px;
-    width: 90%;
+    animation: slideDown 0.5s ease;
+    margin-top: 80px; /* Espacio para el círculo */
+    padding: 100px 40px 40px 40px; /* Top padding grande para el círculo */
+    position: relative;
 }
 
-.contenido-item.activo {
+.carta-item.activo {
     display: block;
 }
 
-.contenido-item p {
-    margin: 0;
+/* Círculo que queda mitad dentro/mitad fuera de la carta */
+.carta-circulo {
+    position: absolute;
+    top: -80px; /* Mitad fuera de la carta */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.carta-circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carta-titulo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1aa37a;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.carta-contenido {
+    text-align: left;
+}
+
+.carta-contenido p {
+    margin: 0 0 20px 0;
     font-size: 1.2rem;
     line-height: 1.7;
     color: #4a6b62;
     font-weight: 500;
+}
+
+.carta-contenido p:last-child {
+    margin-bottom: 0;
+}
+
+/* Animaciones */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0px);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.carta-circulo {
+    animation: float 3s ease-in-out infinite;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -224,12 +295,22 @@
         height: 140px;
     }
     
-    .contenido-item {
-        padding: 25px;
-        margin: 15px auto;
+    .carta-item {
+        padding: 80px 25px 25px 25px;
+        margin-top: 60px;
     }
     
-    .contenido-item p {
+    .carta-circulo {
+        width: 120px;
+        height: 120px;
+        top: -60px;
+    }
+    
+    .carta-titulo {
+        font-size: 1.5rem;
+    }
+    
+    .carta-contenido p {
         font-size: 1.1rem;
     }
 }
@@ -263,24 +344,24 @@
         text-align: left;
     }
     
-    .contenido-item {
-        padding: 20px;
-        margin: 10px auto;
+    .carta-item {
+        padding: 70px 20px 20px 20px;
+        margin-top: 50px;
+        border-radius: 20px;
     }
     
-    .contenido-item p {
+    .carta-circulo {
+        width: 100px;
+        height: 100px;
+        top: -50px;
+    }
+    
+    .carta-titulo {
+        font-size: 1.3rem;
+    }
+    
+    .carta-contenido p {
         font-size: 1rem;
         text-align: left;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
