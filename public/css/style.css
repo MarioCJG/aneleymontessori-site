@@ -21,6 +21,7 @@ body {
     background: var(--bg)
 }
 
+
 img {
     max-width: 100%;
     display: block;
@@ -829,4 +830,81 @@ footer {
 .celebracion-card:hover .celebracion-info::before {
   transform: scale(1.3) rotate(15deg);
   opacity: 1;
+}
+
+
+
+
+
+
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* ===== TIPOGRAFÍA PACIFIO - ORGANIZADA ===== */
+
+/* 1. NAVBAR CON PACIFIO Y TAMAÑO AGRANDADO */
+.site-header .brand a {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    font-size: 1.4rem; /* ✅ Tamaño agrandado */
+    color: #333;
+    text-decoration: none;
+}
+
+.tabs .tab {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    font-size: 1.1rem; /* ✅ Tamaño agrandado */
+}
+
+/* 2. TÍTULOS PRINCIPALES CON PACIFIO */
+h1, h2, h3, h4, .tt, .tty {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+}
+
+/* 3. ELEMENTOS ESPECÍFICOS CON PACIFIO */
+.hero__content h1,
+.section h2.tt,
+.jardin-title,
+.jardin-subtitle,
+.celebracion-title,
+.modal__title,
+.card__body h4 {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+}
+
+/* 4. SECCIÓN "NUESTRA HISTORIA" - VERDE Y ESPACIADO */
+.split__content h3 {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    color: #2E8B57;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.split__content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split__content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.split__content .btn {
+    margin-top: 1.5rem;
+    align-self: flex-start;
+}
+
+/* 5. PERFILES DE TARJETAS CON PACIFIO */
+.card__body h4 {
+    font-size: 1.4rem;
+    color: #2E8B57;
+    margin-bottom: 0.8rem;
 }
