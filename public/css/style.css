@@ -12,8 +12,7 @@
     box-sizing: border-box
 }
 
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial;
@@ -28,6 +27,18 @@ img {
     border-radius: 14px
 }
 
+#hero, 
+#nosotros, 
+#jardin, 
+#escuela, 
+#admision, 
+#contacto, 
+#recursos {
+    scroll-margin-top: 195px;
+}
+
+/* ===== COMPONENTES GENERALES ===== */
+
 .container {
     max-width: 1120px;
     margin: 0 auto;
@@ -38,20 +49,24 @@ img {
     background: var(--bg)
 }
 
+
+/*===== HEADER & NAVBAR ==== */
 .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
     background: rgb(255, 249, 234);
-    box-shadow: var(--shadow)
+    box-shadow: var(--shadow);
+    padding: 0 16px;
+
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 16px;
-    border-bottom: 1px solid #1aa37a,
+    padding: 10px 0px;
+    border-bottom: 1px solid #1aa37a;
 }
 
 .brand img {
@@ -77,7 +92,7 @@ img {
 .tabs {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 0
+    gap: 0;
 }
 
 .tab {
@@ -88,10 +103,11 @@ img {
     color: #333;
     font-weight: 700;
     border-bottom: 2px solid transparent
+    
 }
 
 .tab:hover {
-    background: #f6ce5f
+    background: #f6ce5f;
 }
 
 .tab.is-active {
@@ -99,17 +115,113 @@ img {
     color: var(--brand)
 }
 
-.section {
-    padding: 72px 0
+
+/* ===== BOTÓN HAMBURGUESA ===== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+    position: absolute;
+    top: 20px;
+    right: 16px;
 }
 
-.section--alt {
-    background: var(--surface)
+.menu-toggle:hover {
+    background:rgba(0, 0, 0, 0.1);
 }
 
-.mt {
-    margin-top: 24px
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+    transition: 0.3s;
 }
+
+/*==Responsive==*/
+@media (max-width: 768px) {
+    .site-header {
+        padding: 0 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .brand {
+    flex: 1;
+    padding: 8px 0;
+    border-bottom: none;
+    }
+    
+    .brand img {
+        height: 80px;
+    }
+    
+    .brand a {
+        font-size: 14px;
+    }
+    /* === MOSTRAR BOTÓN HAMBUR === */
+    .menu-toggle {
+        display: flex;
+    }
+
+    .tabs {
+        display: none;
+        grid-template-columns: 1fr;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        gap: 0;
+    }
+    
+
+  /* MENÚ ACTIVO   */
+    .tabs.active {
+        display: grid;
+        animation: slideDown 0.3s ease;
+    }
+    
+    .tab {
+        padding: 16px 20px;
+        text-align: left;
+        border-bottom: 1px solid rgba(26, 163, 122, 0.2);
+        border-radius: 0;
+        font-size: 1rem;
+    }
+    
+    .tab:last-child {
+        border-bottom: none;
+    }
+    
+    .tab:hover {
+        background: #f6ce5f;
+    }
+    
+    /* ANIMACIÓN HAMBURGUESA */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
+
+/*===== HERO =====*/
 
 .hero {
     display: grid;
@@ -120,6 +232,7 @@ img {
 
 .hero__text h1 {
     margin: 0 0 8px
+    
 }
 
 .hero-cta {
@@ -153,7 +266,7 @@ img {
     display: none;
 }
 
-
+/* ===== CARDS GRID ===== */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -168,11 +281,54 @@ img {
     background: var(--surface);
     border-radius: 16px;
     box-shadow: var(--shadow);
-    overflow: hidden
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card__body {
     padding: 14px
+}
+
+
+/* ========== RESPONSIVE GENÉRICO ========== */
+
+@media (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .cards-grid--2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cards-grid--2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .card__body {
+        padding: 16px;
+    }
 }
 
 .btn-row {
@@ -277,37 +433,7 @@ footer {
     z-index: 20
 }
 
-@media (max-width: 960px) {
-    .hero {
-        grid-template-columns: 1fr
-    }
 
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-
-    .mosaic {
-        grid-template-columns: 1fr
-    }
-
-    .split {
-        grid-template-columns: 1fr
-    }
-
-    .tabs {
-        grid-template-columns: repeat(3, 1fr)
-    }
-}
-
-@media (max-width: 560px) {
-    .cards-grid {
-        grid-template-columns: 1fr
-    }
-
-    .tabs {
-        grid-template-columns: repeat(2, 1fr)
-    }
-}
 
 #inicio {
     background: url("/img/hero.png") center/cover no-repeat;
@@ -818,7 +944,6 @@ footer {
 
 /* Efecto de icono decorativo en el título */
 .celebracion-info::before {
-  /* content: '✦'; */
   display: block;
   font-size: 1.2rem;
   color: #1aa37a;
@@ -907,4 +1032,16 @@ h1, h2, h3, h4, .tt, .tty {
     font-size: 1.4rem;
     color: #2E8B57;
     margin-bottom: 0.8rem;
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

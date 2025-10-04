@@ -360,3 +360,55 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarCarta(chipItems[0].getAttribute('data-target'));
     }
 });
+
+
+
+
+
+
+// NAVBAR RESPONSIVE HAMBURGUESA
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.querySelector('.tabs');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en enlaces (útil para one-page)
+        const tabs = mainNav.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+    }
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('a[href*="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Evita el comportamiento por defecto del enlace
+            const targetId = this.getAttribute('href').substring(1); // Obtiene el ID del objetivo
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Realiza el desplazamiento suave
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // Reemplaza la URL en el historial sin el hash
+                window.history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+        });
+    });
+});

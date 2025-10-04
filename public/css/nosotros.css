@@ -12,7 +12,7 @@
 
 /* OVERRIDE  para cards-grid en #nosotros */
 #nosotros .cards-grid {
-    grid-template-columns: repeat(3, 1fr) !important; 
+    grid-template-columns: repeat(3, 1fr) ; 
     gap: 24px;
     justify-items: center; 
     max-width: 1000px; 
