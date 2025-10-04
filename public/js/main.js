@@ -363,9 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
 // NAVBAR RESPONSIVE HAMBURGUESA
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
